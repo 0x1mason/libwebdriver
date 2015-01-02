@@ -7,16 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FEA7A3D1A572E030060D60F /* libwebdriver.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7A3C1A572E030060D60F /* libwebdriver.h */; };
-		0FEA7A3F1A572E030060D60F /* libwebdriverPriv.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7A3E1A572E030060D60F /* libwebdriverPriv.h */; };
-		0FEA7A411A572E030060D60F /* libwebdriver.cp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7A401A572E030060D60F /* libwebdriver.cp */; };
+		0FEA7ACC1A573EDA0060D60F /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB11A573EDA0060D60F /* Common.h */; };
+		0FEA7ACD1A573EDA0060D60F /* cookie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7AB21A573EDA0060D60F /* cookie.cpp */; };
+		0FEA7ACE1A573EDA0060D60F /* Cookie.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB31A573EDA0060D60F /* Cookie.h */; };
+		0FEA7ACF1A573EDA0060D60F /* Curl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7AB41A573EDA0060D60F /* Curl.cpp */; };
+		0FEA7AD01A573EDA0060D60F /* Curl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB51A573EDA0060D60F /* Curl.h */; };
+		0FEA7AD11A573EDA0060D60F /* Element.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB61A573EDA0060D60F /* Element.h */; };
+		0FEA7AD21A573EDA0060D60F /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7AB71A573EDA0060D60F /* Entity.cpp */; };
+		0FEA7AD31A573EDA0060D60F /* Entity.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB81A573EDA0060D60F /* Entity.h */; };
+		0FEA7AD41A573EDA0060D60F /* exceptions.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB91A573EDA0060D60F /* exceptions.hpp */; };
+		0FEA7AD51A573EDA0060D60F /* JsonValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7ABA1A573EDA0060D60F /* JsonValue.cpp */; };
+		0FEA7AD61A573EDA0060D60F /* JsonValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7ABB1A573EDA0060D60F /* JsonValue.h */; };
+		0FEA7AD71A573EDA0060D60F /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7ABC1A573EDA0060D60F /* Log.cpp */; };
+		0FEA7AD81A573EDA0060D60F /* Log.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7ABD1A573EDA0060D60F /* Log.h */; };
+		0FEA7AD91A573EDA0060D60F /* make_unique.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7ABE1A573EDA0060D60F /* make_unique.h */; };
+		0FEA7ADA1A573EDA0060D60F /* Response.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7ABF1A573EDA0060D60F /* Response.cpp */; };
+		0FEA7ADB1A573EDA0060D60F /* Response.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AC01A573EDA0060D60F /* Response.h */; };
+		0FEA7ADC1A573EDA0060D60F /* restio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7AC11A573EDA0060D60F /* restio.cpp */; };
+		0FEA7ADD1A573EDA0060D60F /* restio.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AC21A573EDA0060D60F /* restio.h */; };
+		0FEA7ADE1A573EDA0060D60F /* Routes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AC31A573EDA0060D60F /* Routes.h */; };
+		0FEA7ADF1A573EDA0060D60F /* Session.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7AC41A573EDA0060D60F /* Session.cpp */; };
+		0FEA7AE01A573EDA0060D60F /* Session.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AC51A573EDA0060D60F /* Session.h */; };
+		0FEA7AE11A573EDA0060D60F /* Status.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AC61A573EDA0060D60F /* Status.h */; };
+		0FEA7AE21A573EDA0060D60F /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7AC81A573EDA0060D60F /* Utils.cpp */; };
+		0FEA7AE31A573EDA0060D60F /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AC91A573EDA0060D60F /* Utils.h */; };
+		0FEA7AE41A573EDA0060D60F /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7ACA1A573EDA0060D60F /* Window.cpp */; };
+		0FEA7AE51A573EDA0060D60F /* Window.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7ACB1A573EDA0060D60F /* Window.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0FEA7A391A572E030060D60F /* liblibwebdriver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibwebdriver.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0FEA7A3C1A572E030060D60F /* libwebdriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libwebdriver.h; sourceTree = "<group>"; };
-		0FEA7A3E1A572E030060D60F /* libwebdriverPriv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libwebdriverPriv.h; sourceTree = "<group>"; };
-		0FEA7A401A572E030060D60F /* libwebdriver.cp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = libwebdriver.cp; sourceTree = "<group>"; };
+		0FEA7A391A572E030060D60F /* libwebdriver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libwebdriver.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FEA7AB01A573EDA0060D60F /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = SOURCE_ROOT; };
+		0FEA7AB11A573EDA0060D60F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = SOURCE_ROOT; };
+		0FEA7AB21A573EDA0060D60F /* cookie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cookie.cpp; sourceTree = SOURCE_ROOT; };
+		0FEA7AB31A573EDA0060D60F /* Cookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cookie.h; sourceTree = SOURCE_ROOT; };
+		0FEA7AB41A573EDA0060D60F /* Curl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Curl.cpp; sourceTree = SOURCE_ROOT; };
+		0FEA7AB51A573EDA0060D60F /* Curl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Curl.h; sourceTree = SOURCE_ROOT; };
+		0FEA7AB61A573EDA0060D60F /* Element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Element.h; sourceTree = SOURCE_ROOT; };
+		0FEA7AB71A573EDA0060D60F /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = SOURCE_ROOT; };
+		0FEA7AB81A573EDA0060D60F /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = SOURCE_ROOT; };
+		0FEA7AB91A573EDA0060D60F /* exceptions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = exceptions.hpp; sourceTree = SOURCE_ROOT; };
+		0FEA7ABA1A573EDA0060D60F /* JsonValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JsonValue.cpp; sourceTree = SOURCE_ROOT; };
+		0FEA7ABB1A573EDA0060D60F /* JsonValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonValue.h; sourceTree = SOURCE_ROOT; };
+		0FEA7ABC1A573EDA0060D60F /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Log.cpp; sourceTree = SOURCE_ROOT; };
+		0FEA7ABD1A573EDA0060D60F /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = SOURCE_ROOT; };
+		0FEA7ABE1A573EDA0060D60F /* make_unique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = make_unique.h; sourceTree = SOURCE_ROOT; };
+		0FEA7ABF1A573EDA0060D60F /* Response.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Response.cpp; sourceTree = SOURCE_ROOT; };
+		0FEA7AC01A573EDA0060D60F /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = SOURCE_ROOT; };
+		0FEA7AC11A573EDA0060D60F /* restio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = restio.cpp; sourceTree = SOURCE_ROOT; };
+		0FEA7AC21A573EDA0060D60F /* restio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = restio.h; sourceTree = SOURCE_ROOT; };
+		0FEA7AC31A573EDA0060D60F /* Routes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Routes.h; sourceTree = SOURCE_ROOT; };
+		0FEA7AC41A573EDA0060D60F /* Session.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Session.cpp; sourceTree = SOURCE_ROOT; };
+		0FEA7AC51A573EDA0060D60F /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = SOURCE_ROOT; };
+		0FEA7AC61A573EDA0060D60F /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = SOURCE_ROOT; };
+		0FEA7AC81A573EDA0060D60F /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = SOURCE_ROOT; };
+		0FEA7AC91A573EDA0060D60F /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = SOURCE_ROOT; };
+		0FEA7ACA1A573EDA0060D60F /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = SOURCE_ROOT; };
+		0FEA7ACB1A573EDA0060D60F /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +88,7 @@
 		0FEA7A3A1A572E030060D60F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0FEA7A391A572E030060D60F /* liblibwebdriver.a */,
+				0FEA7A391A572E030060D60F /* libwebdriver.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -49,9 +96,33 @@
 		0FEA7A3B1A572E030060D60F /* libwebdriver */ = {
 			isa = PBXGroup;
 			children = (
-				0FEA7A3C1A572E030060D60F /* libwebdriver.h */,
-				0FEA7A3E1A572E030060D60F /* libwebdriverPriv.h */,
-				0FEA7A401A572E030060D60F /* libwebdriver.cp */,
+				0FEA7AB01A573EDA0060D60F /* build.sh */,
+				0FEA7AB11A573EDA0060D60F /* Common.h */,
+				0FEA7AB21A573EDA0060D60F /* cookie.cpp */,
+				0FEA7AB31A573EDA0060D60F /* Cookie.h */,
+				0FEA7AB41A573EDA0060D60F /* Curl.cpp */,
+				0FEA7AB51A573EDA0060D60F /* Curl.h */,
+				0FEA7AB61A573EDA0060D60F /* Element.h */,
+				0FEA7AB71A573EDA0060D60F /* Entity.cpp */,
+				0FEA7AB81A573EDA0060D60F /* Entity.h */,
+				0FEA7AB91A573EDA0060D60F /* exceptions.hpp */,
+				0FEA7ABA1A573EDA0060D60F /* JsonValue.cpp */,
+				0FEA7ABB1A573EDA0060D60F /* JsonValue.h */,
+				0FEA7ABC1A573EDA0060D60F /* Log.cpp */,
+				0FEA7ABD1A573EDA0060D60F /* Log.h */,
+				0FEA7ABE1A573EDA0060D60F /* make_unique.h */,
+				0FEA7ABF1A573EDA0060D60F /* Response.cpp */,
+				0FEA7AC01A573EDA0060D60F /* Response.h */,
+				0FEA7AC11A573EDA0060D60F /* restio.cpp */,
+				0FEA7AC21A573EDA0060D60F /* restio.h */,
+				0FEA7AC31A573EDA0060D60F /* Routes.h */,
+				0FEA7AC41A573EDA0060D60F /* Session.cpp */,
+				0FEA7AC51A573EDA0060D60F /* Session.h */,
+				0FEA7AC61A573EDA0060D60F /* Status.h */,
+				0FEA7AC81A573EDA0060D60F /* Utils.cpp */,
+				0FEA7AC91A573EDA0060D60F /* Utils.h */,
+				0FEA7ACA1A573EDA0060D60F /* Window.cpp */,
+				0FEA7ACB1A573EDA0060D60F /* Window.h */,
 			);
 			path = libwebdriver;
 			sourceTree = "<group>";
@@ -63,8 +134,22 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FEA7A3F1A572E030060D60F /* libwebdriverPriv.h in Headers */,
-				0FEA7A3D1A572E030060D60F /* libwebdriver.h in Headers */,
+				0FEA7ADD1A573EDA0060D60F /* restio.h in Headers */,
+				0FEA7AD31A573EDA0060D60F /* Entity.h in Headers */,
+				0FEA7AE11A573EDA0060D60F /* Status.h in Headers */,
+				0FEA7AE31A573EDA0060D60F /* Utils.h in Headers */,
+				0FEA7AD91A573EDA0060D60F /* make_unique.h in Headers */,
+				0FEA7AD01A573EDA0060D60F /* Curl.h in Headers */,
+				0FEA7AE51A573EDA0060D60F /* Window.h in Headers */,
+				0FEA7AD11A573EDA0060D60F /* Element.h in Headers */,
+				0FEA7ACE1A573EDA0060D60F /* Cookie.h in Headers */,
+				0FEA7AD41A573EDA0060D60F /* exceptions.hpp in Headers */,
+				0FEA7AD81A573EDA0060D60F /* Log.h in Headers */,
+				0FEA7ADE1A573EDA0060D60F /* Routes.h in Headers */,
+				0FEA7ADB1A573EDA0060D60F /* Response.h in Headers */,
+				0FEA7ACC1A573EDA0060D60F /* Common.h in Headers */,
+				0FEA7AD61A573EDA0060D60F /* JsonValue.h in Headers */,
+				0FEA7AE01A573EDA0060D60F /* Session.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +170,7 @@
 			);
 			name = libwebdriver;
 			productName = libwebdriver;
-			productReference = 0FEA7A391A572E030060D60F /* liblibwebdriver.a */;
+			productReference = 0FEA7A391A572E030060D60F /* libwebdriver.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -124,7 +209,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FEA7A411A572E030060D60F /* libwebdriver.cp in Sources */,
+				0FEA7ADF1A573EDA0060D60F /* Session.cpp in Sources */,
+				0FEA7AE41A573EDA0060D60F /* Window.cpp in Sources */,
+				0FEA7ACD1A573EDA0060D60F /* cookie.cpp in Sources */,
+				0FEA7AD71A573EDA0060D60F /* Log.cpp in Sources */,
+				0FEA7ADC1A573EDA0060D60F /* restio.cpp in Sources */,
+				0FEA7AE21A573EDA0060D60F /* Utils.cpp in Sources */,
+				0FEA7ADA1A573EDA0060D60F /* Response.cpp in Sources */,
+				0FEA7AD51A573EDA0060D60F /* JsonValue.cpp in Sources */,
+				0FEA7AD21A573EDA0060D60F /* Entity.cpp in Sources */,
+				0FEA7ACF1A573EDA0060D60F /* Curl.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,22 +302,24 @@
 		0FEA7A451A572E030060D60F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_PREFIX = "";
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
 			};
 			name = Debug;
 		};
 		0FEA7A461A572E030060D60F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_PREFIX = "";
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
 			};
 			name = Release;
 		};
@@ -246,6 +342,7 @@
 				0FEA7A461A572E030060D60F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
