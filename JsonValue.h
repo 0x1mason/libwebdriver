@@ -56,6 +56,7 @@ public:
     JsonValue& operator[](const std::string& key);
     const JsonValue& operator[](const std::string& key) const;
     
+        static JsonValue create2(const std::string &json);
     static std::unique_ptr<JsonValue> create(const std::string &json);
     static std::string stringify(const JsonObject& obj);
     static std::string stringify(const JsonArray& array);

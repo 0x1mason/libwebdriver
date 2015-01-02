@@ -41,8 +41,6 @@ public:
     
     void toJsonObject(::JsonObject& jObj)
     {
-        auto x = 5/0;
-        std::cout << x;
         if (valPtr.isEmpty())
             return;
         
@@ -181,6 +179,12 @@ std::unique_ptr<JsonValue> JsonValue::create(const std::string &json)
     return std::make_unique<JsonValue>(o);
 }
 
+
+JsonValue JsonValue::create2(const std::string &json)
+{
+    auto o = std::make_shared<ObjectPtr>(json);
+    return JsonValue(o);
+}
 
 bool JsonValue::isEmptyOrNull() const
 {

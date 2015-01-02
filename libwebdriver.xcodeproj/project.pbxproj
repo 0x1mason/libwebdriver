@@ -33,6 +33,9 @@
 		0FEA7AE31A573EDA0060D60F /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AC91A573EDA0060D60F /* Utils.h */; };
 		0FEA7AE41A573EDA0060D60F /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7ACA1A573EDA0060D60F /* Window.cpp */; };
 		0FEA7AE51A573EDA0060D60F /* Window.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7ACB1A573EDA0060D60F /* Window.h */; };
+		0FEA7B051A574E390060D60F /* libPocoJSON.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEA7B011A574E390060D60F /* libPocoJSON.a */; };
+		0FEA7B071A574E390060D60F /* libPocoNet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEA7B031A574E390060D60F /* libPocoNet.a */; };
+		0FEA7B0D1A5750C10060D60F /* libPocoFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEA7B091A5750540060D60F /* libPocoFoundation.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		0FEA7AC91A573EDA0060D60F /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = SOURCE_ROOT; };
 		0FEA7ACA1A573EDA0060D60F /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = SOURCE_ROOT; };
 		0FEA7ACB1A573EDA0060D60F /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = SOURCE_ROOT; };
+		0FEA7B011A574E390060D60F /* libPocoJSON.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPocoJSON.a; path = ../../../../usr/local/lib/libPocoJSON.a; sourceTree = "<group>"; };
+		0FEA7B031A574E390060D60F /* libPocoNet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPocoNet.a; path = ../../../../usr/local/lib/libPocoNet.a; sourceTree = "<group>"; };
+		0FEA7B091A5750540060D60F /* libPocoFoundation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPocoFoundation.a; path = ../../../../usr/local/lib/libPocoFoundation.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FEA7B051A574E390060D60F /* libPocoJSON.a in Frameworks */,
+				0FEA7B0D1A5750C10060D60F /* libPocoFoundation.a in Frameworks */,
+				0FEA7B071A574E390060D60F /* libPocoNet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +89,9 @@
 		0FEA7A301A572E030060D60F = {
 			isa = PBXGroup;
 			children = (
+				0FEA7B011A574E390060D60F /* libPocoJSON.a */,
+				0FEA7B091A5750540060D60F /* libPocoFoundation.a */,
+				0FEA7B031A574E390060D60F /* libPocoNet.a */,
 				0FEA7A3B1A572E030060D60F /* libwebdriver */,
 				0FEA7A3A1A572E030060D60F /* Products */,
 			);
@@ -306,6 +318,7 @@
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
 			};
@@ -318,6 +331,7 @@
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
 			};
