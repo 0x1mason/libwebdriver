@@ -10,8 +10,6 @@
 		0FEA7ACC1A573EDA0060D60F /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB11A573EDA0060D60F /* Common.h */; };
 		0FEA7ACD1A573EDA0060D60F /* cookie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7AB21A573EDA0060D60F /* cookie.cpp */; };
 		0FEA7ACE1A573EDA0060D60F /* Cookie.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB31A573EDA0060D60F /* Cookie.h */; };
-		0FEA7ACF1A573EDA0060D60F /* Curl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7AB41A573EDA0060D60F /* Curl.cpp */; };
-		0FEA7AD01A573EDA0060D60F /* Curl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB51A573EDA0060D60F /* Curl.h */; };
 		0FEA7AD11A573EDA0060D60F /* Element.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB61A573EDA0060D60F /* Element.h */; };
 		0FEA7AD21A573EDA0060D60F /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7AB71A573EDA0060D60F /* Entity.cpp */; };
 		0FEA7AD31A573EDA0060D60F /* Entity.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB81A573EDA0060D60F /* Entity.h */; };
@@ -44,8 +42,6 @@
 		0FEA7AB11A573EDA0060D60F /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = SOURCE_ROOT; };
 		0FEA7AB21A573EDA0060D60F /* cookie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cookie.cpp; sourceTree = SOURCE_ROOT; };
 		0FEA7AB31A573EDA0060D60F /* Cookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cookie.h; sourceTree = SOURCE_ROOT; };
-		0FEA7AB41A573EDA0060D60F /* Curl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Curl.cpp; sourceTree = SOURCE_ROOT; };
-		0FEA7AB51A573EDA0060D60F /* Curl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Curl.h; sourceTree = SOURCE_ROOT; };
 		0FEA7AB61A573EDA0060D60F /* Element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Element.h; sourceTree = SOURCE_ROOT; };
 		0FEA7AB71A573EDA0060D60F /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = SOURCE_ROOT; };
 		0FEA7AB81A573EDA0060D60F /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = SOURCE_ROOT; };
@@ -112,8 +108,6 @@
 				0FEA7AB11A573EDA0060D60F /* Common.h */,
 				0FEA7AB21A573EDA0060D60F /* cookie.cpp */,
 				0FEA7AB31A573EDA0060D60F /* Cookie.h */,
-				0FEA7AB41A573EDA0060D60F /* Curl.cpp */,
-				0FEA7AB51A573EDA0060D60F /* Curl.h */,
 				0FEA7AB61A573EDA0060D60F /* Element.h */,
 				0FEA7AB71A573EDA0060D60F /* Entity.cpp */,
 				0FEA7AB81A573EDA0060D60F /* Entity.h */,
@@ -151,7 +145,6 @@
 				0FEA7AE11A573EDA0060D60F /* Status.h in Headers */,
 				0FEA7AE31A573EDA0060D60F /* Utils.h in Headers */,
 				0FEA7AD91A573EDA0060D60F /* make_unique.h in Headers */,
-				0FEA7AD01A573EDA0060D60F /* Curl.h in Headers */,
 				0FEA7AE51A573EDA0060D60F /* Window.h in Headers */,
 				0FEA7AD11A573EDA0060D60F /* Element.h in Headers */,
 				0FEA7ACE1A573EDA0060D60F /* Cookie.h in Headers */,
@@ -230,7 +223,6 @@
 				0FEA7ADA1A573EDA0060D60F /* Response.cpp in Sources */,
 				0FEA7AD51A573EDA0060D60F /* JsonValue.cpp in Sources */,
 				0FEA7AD21A573EDA0060D60F /* Entity.cpp in Sources */,
-				0FEA7ACF1A573EDA0060D60F /* Curl.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
