@@ -42,9 +42,9 @@ enum MouseButton
 };
 
 class Window;
-typedef std::vector< std::unique_ptr<Window> > Windows;
-typedef std::vector< std::unique_ptr<Cookie> > Cookies;
-typedef std::vector< std::unique_ptr<Element> > Elements;
+typedef std::vector< Window> Windows;
+typedef std::vector< Cookie> Cookies;
+typedef std::vector<Element> Elements;
 
 class Window: public SessionEntity {
 public:
@@ -68,13 +68,13 @@ public:
     std::string url();
     std::string source();
 
-    std::unique_ptr<Cookies> cookies();
+    Cookies cookies();
     void createCookie(const Cookie&);
     void deleteCookie(const std::string&);
 
-    std::unique_ptr<Element> element(const std::string& by, const std::string& value);
-    std::unique_ptr<Elements> elements(const std::string& by, const std::string& value);
-    std::unique_ptr<Element> focusedElement();
+    Element element(const std::string& by, const std::string& value);
+    Elements elements(const std::string& by, const std::string& value);
+    Element focusedElement();
 
     //void click(std::unique_ptr<Element>, int x_offset = 0, int y_offset = 0);
     //void click(const MouseButton& btn = MouseButton::LEFT);

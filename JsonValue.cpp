@@ -129,13 +129,13 @@ JsonValue::JsonValue(std::shared_ptr<ObjectPtr> obj): _object(obj), _type(ValTyp
     }
 }
 
-//JsonValue::JsonValue(const JsonValue& other) : _type(other._type), _jArray(other._jArray),
-//                                                _jObject(other._jObject), _boolVal(other._boolVal),
-//                                                _strVal(other._strVal), _intVal(other._intVal),
-//                                                _object(other._object)
-//{
-//        std::cout << "copied";
-//    
+JsonValue::JsonValue(const JsonValue& other) : _type(other._type), _jArray(std::move(other._jArray)),
+_jObject(std::move(other._jObject)), _boolVal(other._boolVal),
+                                                _strVal(other._strVal), _intVal(other._intVal),
+_object(std::move(other._object))
+{
+        std::cout << "copied";
+    
 //    if (_object == nullptr || _object->valPtr.isEmpty()) {
 //        return;
 //    }
@@ -160,35 +160,90 @@ JsonValue::JsonValue(std::shared_ptr<ObjectPtr> obj): _object(obj), _type(ValTyp
 //        _type = ValType::Object;
 //        _object->toJsonObject(_jObject);
 //    }
-//    
-//}
-
-
-//JsonValue::JsonValue(JsonValue&& other) : _type(other._type), _jArray(other._jArray),
-//_jObject(other._jObject), _boolVal(other._boolVal),
-//_strVal(other._strVal), _intVal(other._intVal),
-//_object(std::move(other._object))
-//{
-//    std::cout << "moved";
-//}
-
-
-std::unique_ptr<JsonValue> JsonValue::create(const std::string &json)
-{
-    auto o = std::make_shared<ObjectPtr>(json);
-    return std::make_unique<JsonValue>(o);
+    
 }
 
 
-JsonValue JsonValue::create2(const std::string &json)
+//JsonValue::JsonValue(JsonValue&& other) : _type(other._type), _jArray(std::move(other._jArray)),
+//_jObject(std::move(other._jObject)), _boolVal(other._boolVal),
+//_strVal(other._strVal), _intVal(other._intVal),
+//_object(std::move(other._object))
+//{
+//    //std::cout << "moved";
+//}
+
+JsonValue& JsonValue::operator=(const JsonValue& other)
+{
+    _type = other._type;
+    
+    _jArray = std::move(other._jArray);
+    _jObject = std::move(other._jObject);
+    _boolVal = other._boolVal;
+    _strVal = other._strVal;
+    _intVal = other._intVal;
+    _object = std::move(other._object);
+
+    return *this;
+//    _type(other._type);
+//    
+//    _jArray(other._jArray);
+//    _jObject(other._jObject); _boolVal(other._boolVal),
+    //_strVal(other._strVal), _intVal(other._intVal),
+    //_object(std::move(other._object))
+}
+
+
+//JsonValue& JsonValue::operator=(JsonValue&& other)
+//{
+//    std::cout << "moved";
+//        _type = other._type;
+//    
+//    _jArray = std::move(other._jArray);
+//    _jObject = std::move(other._jObject);
+//    _boolVal = other._boolVal;
+//    _strVal = other._strVal;
+//    _intVal = other._intVal;
+//    _object = std::move(other._object);
+//    
+//    return *this;
+//}
+
+//::JsonObject& JsonValue::jObject()
+//{
+//    if (!_isParsed && type() == ValType::Object) {
+//        _object->toJsonObject(_jObject);
+//        _isParsed = true;
+//    }
+//    
+//    return _jObject;
+//}
+//::JsonArray& JsonValue::jArray()
+//{
+//    if (!_isParsed && type() == ValType::Array) {
+//        _object->toJsonArray(_jArray);
+//        _isParsed = true;
+//    }
+//    
+//    return _jArray;
+//}
+
+JsonValue JsonValue::create(const std::string &json)
 {
     auto o = std::make_shared<ObjectPtr>(json);
     return JsonValue(o);
 }
 
+
+std::unique_ptr<JsonValue> JsonValue::create2(const std::string &json)
+{
+    auto o = std::make_shared<ObjectPtr>(json);
+    return std::make_unique<JsonValue>(o);
+    //return h;
+}
+
 bool JsonValue::isEmptyOrNull() const
 {
-    return _object == nullptr || _object->valPtr.isEmpty() || _type == ValType::Empty;
+    return (_object == nullptr || _object->valPtr.isEmpty()) && _type == ValType::Empty;
 }
 
 
@@ -236,6 +291,7 @@ std::string JsonValue::stringify(const JsonObject& obj)
     }
     
     objString << "}";
+    std::cout << objString.str();
     return objString.str();
 }
 

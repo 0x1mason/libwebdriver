@@ -27,7 +27,7 @@ public:
     std::string attribute(const std::string& attr);
     std::string name();
 
-    std::unique_ptr<Element> clone_();
+    Element clone_();
 private:
 
 };

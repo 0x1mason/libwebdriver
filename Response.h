@@ -25,7 +25,7 @@ public:
     const std::shared_ptr<JsonValue> json() const;
 
 private:
-    std::unique_ptr<JsonValue> _json;
+    JsonValue _json;
     std::string _raw;
 };
 

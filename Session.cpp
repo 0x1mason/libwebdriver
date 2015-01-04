@@ -8,7 +8,7 @@
 using namespace Routes;
 
 
-std::unique_ptr<Window> Session::focusedWindow()
+Window Session::focusedWindow()
 {
     auto response = restio::get(makeUrl(CONTEXT_WINDOW_HANDLE));
     
@@ -16,11 +16,11 @@ std::unique_ptr<Window> Session::focusedWindow()
         throw;
     }
     
-    return std::make_unique<Window>(response->sessionId(), std::make_shared<Session>(*this));
+    return Window(response->sessionId(), std::make_shared<Session>(*this));
 }
 
 
-std::unique_ptr<Windows> Session::windows()
+Windows Session::windows()
 {
     auto response = restio::get(makeUrl(CONTEXT_WINDOW_HANDLES));
     
@@ -28,11 +28,11 @@ std::unique_ptr<Windows> Session::windows()
         throw;
     }
     
-    auto windows = std::make_unique<Windows>();
+    Windows windows;// = std::make_unique<Windows>();
     
     for (auto& win : response->value().asArray()) {
-        auto w = std::make_unique<Window>(win.asStr(), std::make_shared<Session>(*this));
-        windows->push_back(std::move(w));
+        Window w(win.asStr(), std::make_shared<Session>(*this));
+        windows.push_back(std::move(w));
     }
     
     return windows;
@@ -53,10 +53,10 @@ std::string makeStaticUrl(const std::string& host, const std::string& path)
 
 
 // static
-std::shared_ptr<Session> Session::createSession(const std::string &host, const JsonObject& desiredCapabilities)
+std::shared_ptr<Session> Session::create(const std::string &host, const JsonObject& desiredCapabilities)
 {
     std::string serverUrl = makeStaticUrl(host, SESSION);
-    auto ans = restio::post(serverUrl, desiredCapabilities);
+    auto ans = restio::post(serverUrl, {{"desiredCapabilities", desiredCapabilities}});
 
     if ( ans->status() != restio::getStatus("Success")) {
         throw;

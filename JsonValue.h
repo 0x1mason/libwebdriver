@@ -32,6 +32,7 @@ class JsonValue
     class ObjectPtr; // pimpl 
     
 public:
+    ~JsonValue(){};
     explicit JsonValue();
     JsonValue(bool val);
     JsonValue(int val);
@@ -40,8 +41,8 @@ public:
     JsonValue(const JsonArray& val);
     JsonValue(const char* str);
     JsonValue(std::shared_ptr<ObjectPtr> obj);
-    //JsonValue(const JsonValue& other);
-    //JsonValue(JsonValue&& other);
+    JsonValue(const JsonValue& other);
+  //  JsonValue(JsonValue&& other);
     
     int asInt() const;
     bool asBool() const;
@@ -56,13 +57,20 @@ public:
     JsonValue& operator[](const std::string& key);
     const JsonValue& operator[](const std::string& key) const;
     
-        static JsonValue create2(const std::string &json);
-    static std::unique_ptr<JsonValue> create(const std::string &json);
+    static std::unique_ptr<JsonValue> create2(const std::string &json);
+    static JsonValue create(const std::string &json);
     static std::string stringify(const JsonObject& obj);
     static std::string stringify(const JsonArray& array);
     
+    JsonValue& operator=(const JsonValue& other);
+    JsonValue& operator=(JsonValue&& other);
+
 private:
     std::shared_ptr<ObjectPtr> _object;
+//    bool _isParsed = false;
+//    ::JsonObject& jObject();
+//    ::JsonArray& jArray();
+    
     
     ValType _type;
     bool _boolVal = false;

@@ -93,6 +93,14 @@ namespace restio {
             Poco::Net::HTTPResponse res;
             std::istream &is = session.receiveResponse(res);
             Poco::StreamCopier::copyStream(is, response);
+            
+            if (res.getStatus() > 299 && res.getStatus() < 400) {
+                // TODO: handle recursive loop
+                return doSession(res.get("Location"), verb, data);
+            }
+            else if (res.getStatus() > 399 && res.getStatus() < 500) {
+                
+            }
         }
         catch (Poco::Exception &ex) {
              std::cerr << ex.displayText() << std::endl;

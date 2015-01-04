@@ -29,11 +29,11 @@ const std::shared_ptr<JsonValue> Response::json() const
     
 int Response::status()
 {
-    if (_json->type() != ValType::Empty) {
+    if (_json.type() != ValType::Empty) {
 //        auto jv(_json->asObject());
 //        auto jv2(jv["status"]);
 //        std::cout << jv2.stringify();
-        return _json->asObject()["status"].asInt();
+        return _json.asObject()["status"].asInt();
     }
     
     throw "Empty response";
@@ -41,12 +41,12 @@ int Response::status()
 
 std::string Response::sessionId()
 {
-    if( _json->isEmptyOrNull()) {
+    if( _json.isEmptyOrNull()) {
         return nullptr;
     }
     
-    if (_json->type() != ValType::Empty) {
-        return _json->asObject()["sessionId"].asStr();
+    if (_json.type() != ValType::Empty) {
+        return _json.asObject()["sessionId"].asStr();
     }
     
     throw "Empty response";
@@ -55,8 +55,8 @@ std::string Response::sessionId()
 
 JsonValue& Response::value()
 {
-    if (_json->type() == ValType::Object) {
-        return _json->asObject()["value"];
+    if (_json.type() == ValType::Object) {
+        return _json.asObject()["value"];
     }
     
     throw "Empty response";

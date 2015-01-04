@@ -35,11 +35,11 @@ class Session: public Entity
 //    Session(const Session& other)
 //        : Entity::Entity(other.id(), other.serverUrl()), _capabilities(other._capabilities) { }
 
-    std::unique_ptr<Window> focusedWindow();
-    std::unique_ptr<Windows> windows();
-    std::unique_ptr<Logs> logs(const std::string& logType);
+    Window focusedWindow();
+    Windows windows();
+    Logs logs(const std::string& logType);
     
-    static std::shared_ptr<Session> createSession(const std::string &host,
+    static std::shared_ptr<Session> create(const std::string &host,
                                                   const Capabilities& desiredCapabilities);
     static Status status(const std::string &host);
     static std::unique_ptr<Sessions> sessions(const std::string &host);

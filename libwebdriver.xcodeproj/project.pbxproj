@@ -15,7 +15,7 @@
 		0FEA7AD11A573EDA0060D60F /* Element.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB61A573EDA0060D60F /* Element.h */; };
 		0FEA7AD21A573EDA0060D60F /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7AB71A573EDA0060D60F /* Entity.cpp */; };
 		0FEA7AD31A573EDA0060D60F /* Entity.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB81A573EDA0060D60F /* Entity.h */; };
-		0FEA7AD41A573EDA0060D60F /* exceptions.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB91A573EDA0060D60F /* exceptions.hpp */; };
+		0FEA7AD41A573EDA0060D60F /* Exceptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AB91A573EDA0060D60F /* Exceptions.h */; };
 		0FEA7AD51A573EDA0060D60F /* JsonValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7ABA1A573EDA0060D60F /* JsonValue.cpp */; };
 		0FEA7AD61A573EDA0060D60F /* JsonValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7ABB1A573EDA0060D60F /* JsonValue.h */; };
 		0FEA7AD71A573EDA0060D60F /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7ABC1A573EDA0060D60F /* Log.cpp */; };
@@ -49,7 +49,7 @@
 		0FEA7AB61A573EDA0060D60F /* Element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Element.h; sourceTree = SOURCE_ROOT; };
 		0FEA7AB71A573EDA0060D60F /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = SOURCE_ROOT; };
 		0FEA7AB81A573EDA0060D60F /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = SOURCE_ROOT; };
-		0FEA7AB91A573EDA0060D60F /* exceptions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = exceptions.hpp; sourceTree = SOURCE_ROOT; };
+		0FEA7AB91A573EDA0060D60F /* Exceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exceptions.h; sourceTree = SOURCE_ROOT; };
 		0FEA7ABA1A573EDA0060D60F /* JsonValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JsonValue.cpp; sourceTree = SOURCE_ROOT; };
 		0FEA7ABB1A573EDA0060D60F /* JsonValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonValue.h; sourceTree = SOURCE_ROOT; };
 		0FEA7ABC1A573EDA0060D60F /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Log.cpp; sourceTree = SOURCE_ROOT; };
@@ -117,7 +117,7 @@
 				0FEA7AB61A573EDA0060D60F /* Element.h */,
 				0FEA7AB71A573EDA0060D60F /* Entity.cpp */,
 				0FEA7AB81A573EDA0060D60F /* Entity.h */,
-				0FEA7AB91A573EDA0060D60F /* exceptions.hpp */,
+				0FEA7AB91A573EDA0060D60F /* Exceptions.h */,
 				0FEA7ABA1A573EDA0060D60F /* JsonValue.cpp */,
 				0FEA7ABB1A573EDA0060D60F /* JsonValue.h */,
 				0FEA7ABC1A573EDA0060D60F /* Log.cpp */,
@@ -155,7 +155,7 @@
 				0FEA7AE51A573EDA0060D60F /* Window.h in Headers */,
 				0FEA7AD11A573EDA0060D60F /* Element.h in Headers */,
 				0FEA7ACE1A573EDA0060D60F /* Cookie.h in Headers */,
-				0FEA7AD41A573EDA0060D60F /* exceptions.hpp in Headers */,
+				0FEA7AD41A573EDA0060D60F /* Exceptions.h in Headers */,
 				0FEA7AD81A573EDA0060D60F /* Log.h in Headers */,
 				0FEA7ADE1A573EDA0060D60F /* Routes.h in Headers */,
 				0FEA7ADB1A573EDA0060D60F /* Response.h in Headers */,
