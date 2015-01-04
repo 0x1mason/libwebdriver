@@ -8,11 +8,10 @@
 class Log {
 
   public:
-
-  	static std::string LTYPE_CLIENT;
-  	static std::string LTYPE_DRIVER;
-  	static std::string LTYPE_BROWSER;
-  	static std::string LTYPE_SERVER;
+    const std::string LTYPE_CLIENT = "client";
+    const std::string LTYPE_DRIVER = "driver";
+    const std::string LTYPE_BROWSER = "browser";
+    const std::string LTYPE_SERVER = "server";
 
     int timestamp;
     std::string level;

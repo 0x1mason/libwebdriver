@@ -50,7 +50,7 @@ public:
             obj = valPtr.extract<Poco::JSON::Object::Ptr>();
         }
         catch(Poco::BadCastException& ex) {
-            std::cerr << __FILE__ << " " << __LINE__ << ": " << ex.displayText();
+            std::cerr << __FILE__ << " " << __func__ << " " << __LINE__ << ": " << ex.displayText();
             return;
         }
         
@@ -129,48 +129,10 @@ JsonValue::JsonValue(std::shared_ptr<ObjectPtr> obj): _object(obj), _type(ValTyp
     }
 }
 
-JsonValue::JsonValue(const JsonValue& other) : _type(other._type), _jArray(std::move(other._jArray)),
-_jObject(std::move(other._jObject)), _boolVal(other._boolVal),
-                                                _strVal(other._strVal), _intVal(other._intVal),
-_object(std::move(other._object))
-{
-        std::cout << "copied";
-    
-//    if (_object == nullptr || _object->valPtr.isEmpty()) {
-//        return;
-//    }
-//    
-//    if (_object->valPtr.isBoolean()) {
-//        _type = ValType::Bool;
-//        _boolVal = _object->valPtr.convert<bool>();
-//    }
-//    else if (_object->valPtr.isInteger()) {
-//        _type = ValType::Int;
-//        _intVal = _object->valPtr.convert<int>();
-//    }
-//    else if (_object->valPtr.isString()) {
-//        _type = ValType::String;
-//        _strVal = _object->valPtr.convert<std::string>();
-//    }
-//    else if (_object->valPtr.isVector()) {
-//        _type = ValType::Array;
-//        _object->toJsonArray(_jArray);
-//    }
-//    else /* treat as object */ {
-//        _type = ValType::Object;
-//        _object->toJsonObject(_jObject);
-//    }
-    
-}
 
+JsonValue::JsonValue(const JsonValue& other) : _type(other._type), _jArray(std::move(other._jArray)), _jObject(std::move(other._jObject)), _boolVal(other._boolVal), _strVal(other._strVal), _intVal(other._intVal), _object(std::move(other._object))
+{ }
 
-//JsonValue::JsonValue(JsonValue&& other) : _type(other._type), _jArray(std::move(other._jArray)),
-//_jObject(std::move(other._jObject)), _boolVal(other._boolVal),
-//_strVal(other._strVal), _intVal(other._intVal),
-//_object(std::move(other._object))
-//{
-//    //std::cout << "moved";
-//}
 
 JsonValue& JsonValue::operator=(const JsonValue& other)
 {
@@ -184,12 +146,6 @@ JsonValue& JsonValue::operator=(const JsonValue& other)
     _object = std::move(other._object);
 
     return *this;
-//    _type(other._type);
-//    
-//    _jArray(other._jArray);
-//    _jObject(other._jObject); _boolVal(other._boolVal),
-    //_strVal(other._strVal), _intVal(other._intVal),
-    //_object(std::move(other._object))
 }
 
 
@@ -208,38 +164,17 @@ JsonValue& JsonValue::operator=(const JsonValue& other)
 //    return *this;
 //}
 
-//::JsonObject& JsonValue::jObject()
-//{
-//    if (!_isParsed && type() == ValType::Object) {
-//        _object->toJsonObject(_jObject);
-//        _isParsed = true;
-//    }
-//    
-//    return _jObject;
-//}
-//::JsonArray& JsonValue::jArray()
-//{
-//    if (!_isParsed && type() == ValType::Array) {
-//        _object->toJsonArray(_jArray);
-//        _isParsed = true;
-//    }
-//    
-//    return _jArray;
-//}
 
 JsonValue JsonValue::create(const std::string &json)
 {
+    if (json.empty() || (json[0] != '{' && json[0] != '[')) {
+        return JsonValue();
+    }
+    
     auto o = std::make_shared<ObjectPtr>(json);
     return JsonValue(o);
 }
 
-
-std::unique_ptr<JsonValue> JsonValue::create2(const std::string &json)
-{
-    auto o = std::make_shared<ObjectPtr>(json);
-    return std::make_unique<JsonValue>(o);
-    //return h;
-}
 
 bool JsonValue::isEmptyOrNull() const
 {
@@ -291,7 +226,6 @@ std::string JsonValue::stringify(const JsonObject& obj)
     }
     
     objString << "}";
-    std::cout << objString.str();
     return objString.str();
 }
 

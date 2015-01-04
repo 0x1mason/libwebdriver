@@ -21,8 +21,8 @@
 		0FEA7AD91A573EDA0060D60F /* make_unique.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7ABE1A573EDA0060D60F /* make_unique.h */; };
 		0FEA7ADA1A573EDA0060D60F /* Response.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7ABF1A573EDA0060D60F /* Response.cpp */; };
 		0FEA7ADB1A573EDA0060D60F /* Response.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AC01A573EDA0060D60F /* Response.h */; };
-		0FEA7ADC1A573EDA0060D60F /* restio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7AC11A573EDA0060D60F /* restio.cpp */; };
-		0FEA7ADD1A573EDA0060D60F /* restio.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AC21A573EDA0060D60F /* restio.h */; };
+		0FEA7ADC1A573EDA0060D60F /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7AC11A573EDA0060D60F /* HttpClient.cpp */; };
+		0FEA7ADD1A573EDA0060D60F /* HttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AC21A573EDA0060D60F /* HttpClient.h */; };
 		0FEA7ADE1A573EDA0060D60F /* Routes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AC31A573EDA0060D60F /* Routes.h */; };
 		0FEA7ADF1A573EDA0060D60F /* Session.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA7AC41A573EDA0060D60F /* Session.cpp */; };
 		0FEA7AE01A573EDA0060D60F /* Session.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FEA7AC51A573EDA0060D60F /* Session.h */; };
@@ -53,15 +53,15 @@
 		0FEA7ABE1A573EDA0060D60F /* make_unique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = make_unique.h; sourceTree = SOURCE_ROOT; };
 		0FEA7ABF1A573EDA0060D60F /* Response.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Response.cpp; sourceTree = SOURCE_ROOT; };
 		0FEA7AC01A573EDA0060D60F /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = SOURCE_ROOT; };
-		0FEA7AC11A573EDA0060D60F /* restio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = restio.cpp; sourceTree = SOURCE_ROOT; };
-		0FEA7AC21A573EDA0060D60F /* restio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = restio.h; sourceTree = SOURCE_ROOT; };
+		0FEA7AC11A573EDA0060D60F /* HttpClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = HttpClient.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		0FEA7AC21A573EDA0060D60F /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HttpClient.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		0FEA7AC31A573EDA0060D60F /* Routes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Routes.h; sourceTree = SOURCE_ROOT; };
-		0FEA7AC41A573EDA0060D60F /* Session.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Session.cpp; sourceTree = SOURCE_ROOT; };
+		0FEA7AC41A573EDA0060D60F /* Session.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Session.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		0FEA7AC51A573EDA0060D60F /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = SOURCE_ROOT; };
 		0FEA7AC61A573EDA0060D60F /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = SOURCE_ROOT; };
 		0FEA7AC81A573EDA0060D60F /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = SOURCE_ROOT; };
 		0FEA7AC91A573EDA0060D60F /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = SOURCE_ROOT; };
-		0FEA7ACA1A573EDA0060D60F /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = SOURCE_ROOT; };
+		0FEA7ACA1A573EDA0060D60F /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = Window.cpp; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		0FEA7ACB1A573EDA0060D60F /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = SOURCE_ROOT; };
 		0FEA7B011A574E390060D60F /* libPocoJSON.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPocoJSON.a; path = ../../../../usr/local/lib/libPocoJSON.a; sourceTree = "<group>"; };
 		0FEA7B031A574E390060D60F /* libPocoNet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPocoNet.a; path = ../../../../usr/local/lib/libPocoNet.a; sourceTree = "<group>"; };
@@ -119,8 +119,8 @@
 				0FEA7ABE1A573EDA0060D60F /* make_unique.h */,
 				0FEA7ABF1A573EDA0060D60F /* Response.cpp */,
 				0FEA7AC01A573EDA0060D60F /* Response.h */,
-				0FEA7AC11A573EDA0060D60F /* restio.cpp */,
-				0FEA7AC21A573EDA0060D60F /* restio.h */,
+				0FEA7AC11A573EDA0060D60F /* HttpClient.cpp */,
+				0FEA7AC21A573EDA0060D60F /* HttpClient.h */,
 				0FEA7AC31A573EDA0060D60F /* Routes.h */,
 				0FEA7AC41A573EDA0060D60F /* Session.cpp */,
 				0FEA7AC51A573EDA0060D60F /* Session.h */,
@@ -140,7 +140,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FEA7ADD1A573EDA0060D60F /* restio.h in Headers */,
+				0FEA7ADD1A573EDA0060D60F /* HttpClient.h in Headers */,
 				0FEA7AD31A573EDA0060D60F /* Entity.h in Headers */,
 				0FEA7AE11A573EDA0060D60F /* Status.h in Headers */,
 				0FEA7AE31A573EDA0060D60F /* Utils.h in Headers */,
@@ -218,7 +218,7 @@
 				0FEA7AE41A573EDA0060D60F /* Window.cpp in Sources */,
 				0FEA7ACD1A573EDA0060D60F /* cookie.cpp in Sources */,
 				0FEA7AD71A573EDA0060D60F /* Log.cpp in Sources */,
-				0FEA7ADC1A573EDA0060D60F /* restio.cpp in Sources */,
+				0FEA7ADC1A573EDA0060D60F /* HttpClient.cpp in Sources */,
 				0FEA7AE21A573EDA0060D60F /* Utils.cpp in Sources */,
 				0FEA7ADA1A573EDA0060D60F /* Response.cpp in Sources */,
 				0FEA7AD51A573EDA0060D60F /* JsonValue.cpp in Sources */,

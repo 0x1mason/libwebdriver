@@ -3,29 +3,45 @@
 
 #include <exception>
 #include <string>
-#include <osstream>
+#include <sstream>
 
 
-class RemoteException: public std::runtime_error
+class LibWebDriverException: public std::runtime_error
 {
-    
 public:
-    RemoteException(const std::string& msg, const std::string& fileName, int lineNum)
+    LibWebDriverException(const std::string& msg, const std::string& fileName,
+                          const std::string& func, int lineNum)
+        : runtime_error::runtime_error(msg)
     {
-        _msg << fileName << " " << lineNum << ": " << msg;
+        _msg << fileName << " " << func << " " << lineNum << ":\r\n" << msg;
     }
     
-    virtual const char* what() const override noexcept()
+    
+    virtual const char* what() const throw() override
     {
-        return _msg.str();
+        return _msg.str().c_str();
     }
-
+    
+    
 private:
     std::ostringstream _msg;
-    
+};
 
-    
-} ;
 
+class RemoteException: public LibWebDriverException
+{
+public:
+    using LibWebDriverException::LibWebDriverException;
+};
+
+
+class ClientException: public LibWebDriverException
+{
+public:
+    using LibWebDriverException::LibWebDriverException;
+};
+
+#define throw_RemoteException(msg) throw RemoteException(msg, __FILE__, __func__, __LINE__)
+#define throw_ClientException(msg) throw ClientException(msg, __FILE__, __func__, __LINE__)
 
 #endif

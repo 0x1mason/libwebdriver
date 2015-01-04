@@ -1,19 +1,17 @@
-#ifndef RESTIO_H
-#define RESTIO_H
+#ifndef HTTPCLIENT_H
+#define HTTPCLIENT_H
 
 //#include "jsonengine.hpp"
 
 #include "JsonValue.h"
 #include "Response.h"
 #include <map>
-#include <memory>
 
 
 typedef std::map<std::string, int> StatusMap;
 
-namespace restio
+namespace HttpClient
 {
-   // std::string doSession2(const std::string& url, const std::string& verb, const std::string& data);
     int getStatus(const std::string&);
 
     std::unique_ptr<Response> get(const std::string&);

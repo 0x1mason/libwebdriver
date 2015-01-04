@@ -42,7 +42,6 @@ public:
     JsonValue(const char* str);
     JsonValue(std::shared_ptr<ObjectPtr> obj);
     JsonValue(const JsonValue& other);
-  //  JsonValue(JsonValue&& other);
     
     int asInt() const;
     bool asBool() const;
@@ -66,11 +65,7 @@ public:
     JsonValue& operator=(JsonValue&& other);
 
 private:
-    std::shared_ptr<ObjectPtr> _object;
-//    bool _isParsed = false;
-//    ::JsonObject& jObject();
-//    ::JsonArray& jArray();
-    
+    std::shared_ptr<ObjectPtr> _object;   
     
     ValType _type;
     bool _boolVal = false;

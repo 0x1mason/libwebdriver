@@ -7,7 +7,7 @@
 
 #include "Window.h"
 #include "Routes.h"
-#include "restio.h"
+#include "HttpClient.h"
 //Window::Window() {
 //}
 //
@@ -20,9 +20,9 @@
 std::pair<int, int> Window::position()
 {
     auto url = makeUrl(Routes::WINDOW_POSITION);
-    auto response = restio::get(url);
+    auto response = HttpClient::get(url);
     
-    if (response->status() != restio::getStatus("Success")) {
+    if (response->status() != HttpClient::getStatus("Success")) {
         throw;
     }
     
@@ -33,9 +33,9 @@ std::pair<int, int> Window::position()
 std::pair<int, int> Window::size()
 {
     auto url = makeUrl(Routes::WINDOW_SIZE);
-    auto response = restio::get(url);
+    auto response = HttpClient::get(url);
     
-    if (response->status() != restio::getStatus("Success")) {
+    if (response->status() != HttpClient::getStatus("Success")) {
         throw;
     }
     
@@ -46,9 +46,9 @@ std::pair<int, int> Window::size()
 void Window::setPosition(int x, int y)
 {
     auto url = makeUrl(Routes::WINDOW_POSITION);
-    auto response = restio::post(url, {{"x", x}, {"y", y}});
+    auto response = HttpClient::post(url, {{"x", x}, {"y", y}});
     
-    if (response->status() != restio::getStatus("Success")) {
+    if (response->status() != HttpClient::getStatus("Success")) {
         throw;
     }
 }
@@ -57,9 +57,9 @@ void Window::setPosition(int x, int y)
 void Window::setSize(int width, int height)
 {
     auto url = makeUrl(Routes::WINDOW_SIZE);
-    auto response = restio::post(url, {{"width", width}, {"height", height}});
+    auto response = HttpClient::post(url, {{"width", width}, {"height", height}});
     
-    if (response->status() != restio::getStatus("Success")) {
+    if (response->status() != HttpClient::getStatus("Success")) {
         throw;
     }
 }
@@ -68,9 +68,9 @@ void Window::setSize(int width, int height)
 void Window::maximize()
 {
     auto url = makeUrl(Routes::WINDOW_MAXIMIZE);
-    auto response = restio::post(url);
+    auto response = HttpClient::post(url);
     
-    if (response->status() != restio::getStatus("Success")) {
+    if (response->status() != HttpClient::getStatus("Success")) {
         throw;
     }
 }
@@ -79,9 +79,9 @@ void Window::maximize()
 void Window::acceptAlert()
 {
     auto url = makeUrl(Routes::CONTEXT_ACCEPT_ALERT);
-    auto response = restio::post(url);
+    auto response = HttpClient::post(url);
     
-    if (response->status() != restio::getStatus("Success")) {
+    if (response->status() != HttpClient::getStatus("Success")) {
         throw;
     }
 }
@@ -90,9 +90,9 @@ void Window::acceptAlert()
 void Window::dismissAlert()
 {
     auto url = makeUrl(Routes::CONTEXT_DISMISS_ALERT);
-    auto response = restio::post(url);
+    auto response = HttpClient::post(url);
     
-    if (response->status() != restio::getStatus("Success")) {
+    if (response->status() != HttpClient::getStatus("Success")) {
         throw;
     }
 }
@@ -101,9 +101,9 @@ void Window::dismissAlert()
 std::string Window::alertText()
 {
     auto url = makeUrl(Routes::CONTEXT_ALERT_TEXT);
-    auto response = restio::get(url);
+    auto response = HttpClient::get(url);
     
-    if (response->status() != restio::getStatus("Success")) {
+    if (response->status() != HttpClient::getStatus("Success")) {
         throw;
     }
     
@@ -114,9 +114,9 @@ std::string Window::alertText()
 void Window::sendKeysToAlert(const std::string& keys)
 {
     auto url = makeUrl(Routes::CONTEXT_ALERT_TEXT);
-    auto response = restio::post(url, {{"text", keys}});
+    auto response = HttpClient::post(url, {{"text", keys}});
     
-    if (response->status() != restio::getStatus("Success")) {
+    if (response->status() != HttpClient::getStatus("Success")) {
         throw;
     }
 }
@@ -124,9 +124,9 @@ void Window::sendKeysToAlert(const std::string& keys)
 
 void Window::_buttonAction(const MouseButton& btn, const std::string& url)
 {
-    auto response = restio::post(url, {{"button", btn}});
+    auto response = HttpClient::post(url, {{"button", btn}});
     
-    if (response->status() != restio::getStatus("Success")) {
+    if (response->status() != HttpClient::getStatus("Success")) {
         throw;
     }
 }

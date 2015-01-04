@@ -1,10 +1,11 @@
-#include "restio.h"
+#include "HttpClient.h"
 #include "Response.h"
 #include "JsonValue.h"
 #include "Utils.h"
 //#include "http.h"
 #include "make_unique.h"
 #include "Common.h"
+#include "Routes.h"
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -18,14 +19,16 @@
 #include "Poco/Path.h"
 #include "Poco/URI.h"
 #include "Poco/Exception.h"
-#include "Poco/CountingStream.h"
-#include "Poco/Net/HTTPStream.h"
-#include "Poco/Net/HTTPHeaderStream.h"
-#include "Poco/Net/HTTPChunkedStream.h"
-#include "Poco/Net/HTTPFixedLengthStream.h"
+//#include "Poco/CountingStream.h"
+//#include "Poco/Net/HTTPStream.h"
+//#include "Poco/Net/HTTPHeaderStream.h"
+//#include "Poco/Net/HTTPChunkedStream.h"
+//#include "Poco/Net/HTTPFixedLengthStream.h"
+
+#include "Exceptions.h"
 
 
-namespace restio {
+namespace HttpClient {
     
 
     
@@ -94,12 +97,31 @@ namespace restio {
             std::istream &is = session.receiveResponse(res);
             Poco::StreamCopier::copyStream(is, response);
             
-            if (res.getStatus() > 299 && res.getStatus() < 400) {
-                // TODO: handle recursive loop
-                return doSession(res.get("Location"), verb, data);
-            }
+            // appium still responds with 303, requiring some contortions to get the session id
+            if (url.find(Routes::SESSION) != std::string::npos
+                && res.getStatus() == 303) {
+                std::cout << response.str();
+
+                // extract session id from Location header
+                std::string path = res.get("Location");
+                size_t i = path.find_last_of("/");
+                std::string id = path.substr(i + 1);
+                
+                // now create a faux json response so we can continue using logic consistent with other WD servers
+                response.clear();//clear any bits set
+                response.str("{\"status\":0,\"value\":{},\"sessionId\":\"" + id + "\"}");
+
+                
+            }  // TODO: handle infinite loop for 300s
             else if (res.getStatus() > 399 && res.getStatus() < 500) {
                 
+                throw_ClientException(response.str());
+            }
+            else if (res.getStatus() > 499 && res.getStatus() < 600) {
+                throw_RemoteException(response.str());
+            }
+            else {
+
             }
         }
         catch (Poco::Exception &ex) {

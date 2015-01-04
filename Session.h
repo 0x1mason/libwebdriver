@@ -40,7 +40,7 @@ class Session: public Entity
     Logs logs(const std::string& logType);
     
     static std::shared_ptr<Session> create(const std::string &host,
-                                                  const Capabilities& desiredCapabilities);
+                                           const Capabilities& desiredCapabilities);
     static Status status(const std::string &host);
     static std::unique_ptr<Sessions> sessions(const std::string &host);
     

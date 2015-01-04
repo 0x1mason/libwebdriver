@@ -22,7 +22,7 @@ public:
     std::string sessionId();
     JsonValue& value();
     std::string raw() const;
-    const std::shared_ptr<JsonValue> json() const;
+    //const std::shared_ptr<JsonValue> json() const;
 
 private:
     JsonValue _json;

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0FEA7A381A572E030060D60F"
-               BuildableName = "liblibwebdriver.a"
+               BuildableName = "libwebdriver.a"
                BlueprintName = "libwebdriver"
                ReferencedContainer = "container:libwebdriver.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0FEA7A381A572E030060D60F"
-            BuildableName = "liblibwebdriver.a"
+            BuildableName = "libwebdriver.a"
             BlueprintName = "libwebdriver"
             ReferencedContainer = "container:libwebdriver.xcodeproj">
          </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0FEA7A381A572E030060D60F"
-            BuildableName = "liblibwebdriver.a"
+            BuildableName = "libwebdriver.a"
             BlueprintName = "libwebdriver"
             ReferencedContainer = "container:libwebdriver.xcodeproj">
          </BuildableReference>
