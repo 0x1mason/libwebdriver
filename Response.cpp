@@ -10,9 +10,9 @@
 #include <iostream>
 
 
-Response::Response(const std::string& responseBody, int httpStatus, const std::string& reason) : _raw(responseBody), _json(JsonValue::create(responseBody))
-{
-}
+Response::Response(const std::string& responseBody, int httpStatus, const std::string& reason)
+    : _raw(responseBody), _json(JsonValue::create(responseBody))
+{ }
 
 
 //const std::shared_ptr<JsonValue> Response::json() const
@@ -34,7 +34,7 @@ int Response::status()
 
 std::string Response::sessionId()
 {
-    if( _json.isEmptyOrNull() ||
+    if(_json.isEmptyOrNull() ||
        _json.type() != ValType::Object) {
         return "";
     }

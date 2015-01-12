@@ -1,21 +1,21 @@
-/* 
- * File:   Window.h
- * Author: saucelabs
- *
- * Created on December 23, 2014, 2:40 PM
- */
+// Copyright 2015 Eric Millin
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 
 #ifndef WINDOW_H
 #define	WINDOW_H
 
-//class Window {
-//public:
-//    Window();
-//    Window(const Window& orig);
-//    virtual ~Window();
-//private:
-//
-//};
 #include <vector>
 #include <memory>
 
@@ -27,12 +27,12 @@ using std::vector;
 using std::map;
 
 //struct By {
-//  static const std::string Css;
-//  static const std::string Name;
-//    static const std::string LinkText;
-//    static const std::string PartialLinkText;
-//    static const std::string Tag;
-//    static const std::string XPath;
+//  static const std::string Css = "css selector";
+//  static const std::string Name = "class name";
+//    static const std::string LinkText = "link text";
+//    static const std::string PartialLinkText = "partial link text";
+//    static const std::string Tag = "tag name";
+//    static const std::string XPath = "xpath";
 //    static const std::string AccessibilityId;
 //}
 
@@ -42,19 +42,20 @@ enum MouseButton
 };
 
 class Window;
-typedef std::vector< Window> Windows;
-typedef std::vector< Cookie> Cookies;
-typedef std::vector<Element> Elements;
+typedef std::vector<Window> Windows;
 
-class Window: public SessionEntity {
+
+
+class Window: public SessionEntity
+{
 public:
-   // Window() : SessionEntity::SessionEntity() {};
+
     using SessionEntity::SessionEntity;
 
     std::pair<int, int> position(); // x, y
     std::pair<int, int> size(); // w, h
-    void setPosition(int x, int y); // x, y
-    void setSize(int, int); // w, h
+    void setPosition(int x, int y);
+    void setSize(int width, int height);
     void maximize();
 
 
@@ -76,7 +77,7 @@ public:
     Elements elements(const std::string& by, const std::string& value);
     Element focusedElement();
 
-    //void click(std::unique_ptr<Element>, int x_offset = 0, int y_offset = 0);
+    //void click(Element, int x_offset = 0, int y_offset = 0);
     //void click(const MouseButton& btn = MouseButton::LEFT);
     void buttonDown(const MouseButton& btn = MouseButton::LEFT);
     void buttonUp(const MouseButton& btn = MouseButton::LEFT);

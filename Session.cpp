@@ -12,10 +12,6 @@ Window Session::focusedWindow()
 {
     auto response = HttpClient::get(makeUrl(CONTEXT_WINDOW_HANDLE));
     
-    if (response->status() != HttpClient::getStatus("Success")) {
-        throw;
-    }
-    
     return Window(response->sessionId(), std::make_shared<Session>(*this));
 }
 
@@ -24,11 +20,7 @@ Windows Session::windows()
 {
     auto response = HttpClient::get(makeUrl(CONTEXT_WINDOW_HANDLES));
     
-    if (response->status() != HttpClient::getStatus("Success")) {
-        throw;
-    }
-    
-    Windows windows;// = std::make_unique<Windows>();
+    Windows windows;
     
     for (auto& win : response->value().asArray()) {
         Window w(win.asStr(), std::make_shared<Session>(*this));
@@ -53,16 +45,12 @@ std::string makeStaticUrl(const std::string& host, const std::string& path)
 
 
 // static
-std::shared_ptr<Session> Session::create(const std::string &host, const JsonObject& desiredCapabilities)
+Session Session::create(const std::string &host, const JsonObject& desiredCapabilities)
 {
     std::string serverUrl = makeStaticUrl(host, SESSION);
     auto ans = HttpClient::post(serverUrl, {{"desiredCapabilities", desiredCapabilities}});
-
-    if ( ans->status() != HttpClient::getStatus("Success")) {
-        throw;
-    }
     
-    return std::make_shared<Session>(ans->sessionId(), serverUrl, desiredCapabilities);
+    return Session(ans->sessionId(), serverUrl, desiredCapabilities);
 }
 
 
@@ -81,23 +69,18 @@ Status Session::status(const std::string &host)
 
 
 // static
-std::unique_ptr<Sessions> Session::sessions(const std::string &host)
+Sessions Session::sessions(const std::string &host)
 {
     std::string serverUrl = makeStaticUrl(host, SESSIONS);
     auto ans = HttpClient::get(serverUrl);
-    
-    if ( ans->status() != HttpClient::getStatus("Success")) {
-        throw;
-    }
-    
+
     auto sessionArray = ans->value().asArray();
-    auto sessions = std::make_unique<Sessions>();
+    Sessions sessions;
     
     // each session obj == {id:string, capabilities:obj}
     for (auto& s : sessionArray) {
         Capabilities caps = s["capabilities"].asObject();
-        auto o = std::make_shared<Session>(s["sessionId"].asStr(), host, caps);
-        sessions->push_back(o);
+        sessions.push_back(Session(s["sessionId"].asStr(), host, caps));
     }
     
     return sessions;

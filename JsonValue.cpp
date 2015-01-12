@@ -26,23 +26,28 @@ public:
        // std::cout << valPtr.toString();
     }
     
+    
     ObjectPtr(const Poco::Dynamic::Var& val): valPtr(val)
     {
       //  std::cout << valPtr.toString();
     }
 
+    
     ObjectPtr(const std::string& json)
     {
         Poco::JSON::Parser parser;
         valPtr = parser.parse(json);
     }
 
+    
     Poco::Dynamic::Var valPtr;
+    
     
     void toJsonObject(::JsonObject& jObj)
     {
-        if (valPtr.isEmpty())
+        if (valPtr.isEmpty()) {
             return;
+        }
         
         Poco::JSON::Object::Ptr obj;
         
@@ -58,6 +63,7 @@ public:
             jObj.emplace(kvp.first, std::make_shared<ObjectPtr>(kvp.second));
         }
     }
+    
     
     void toJsonArray(::JsonArray& jArray)
     {
@@ -130,8 +136,10 @@ JsonValue::JsonValue(std::shared_ptr<ObjectPtr> obj): _object(obj), _type(ValTyp
 }
 
 
-JsonValue::JsonValue(const JsonValue& other) : _type(other._type), _jArray(std::move(other._jArray)), _jObject(std::move(other._jObject)), _boolVal(other._boolVal), _strVal(other._strVal), _intVal(other._intVal), _object(std::move(other._object))
-{ }
+JsonValue::JsonValue(const JsonValue& other)
+    : _type(other._type), _jArray(std::move(other._jArray)), _jObject(std::move(other._jObject)),
+      _boolVal(other._boolVal), _strVal(other._strVal), _intVal(other._intVal), _object(std::move(other._object))
+{}
 
 
 JsonValue& JsonValue::operator=(const JsonValue& other)
